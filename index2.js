@@ -171,7 +171,7 @@ e.preventDefault() // prevent scrolling when inside DIV
 
 document.addEventListener('touchend', function(e){
 var touchobj = e.changedTouches[0]
-dist = touchobj.pageX - startX // get total dist traveled by finger while in contact with surface
+distX = touchobj.pageX - startX // get total dist traveled by finger while in contact with surface
 elapsedTime = new Date().getTime() - startTime // get time elapsed
 // check that elapsed time is within specified, horizontal dist traveled >= threshold, and vertical dist traveled <= 100
 if (elapsedTime <= allowedTime){ // first condition for awipe met
