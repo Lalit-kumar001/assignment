@@ -107,7 +107,7 @@ overflow: hidden;
     
     .know-more{
         text-align: center;
-        margin-top: 8%;
+        margin-top: 10%;
     }
      a{
         text-decoration: none;
@@ -115,7 +115,7 @@ overflow: hidden;
         font-size: 1rem;
     }
     p{
-        line-height: 1rem;
+        line-height: 1.4rem;
         margin-bottom: 5%;
         font-size: 0.8rem;
     }
@@ -129,20 +129,20 @@ overflow: hidden;
     }
     
     h1  i{
-        font-size: 0.8rem;
+        font-size: 1rem;
         margin-right: -8%;
     }
 
     .heading h2{
-        font-size: 1rem;
+        font-size: 1.5rem;
         margin-top: 10px;
     }
     /* some use fulll classes  */
 
-    .left{
+    /* .left{
         left: -110%;
         display: none;
-    }
+    } */
 
     .current{
         left: 0%;
@@ -154,3 +154,16 @@ overflow: hidden;
         left: 110%;
         display: none;
     }
+
+    @media only screen and (max-width: 238px) {
+        .heading h2{
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        p{
+            line-height: 1.2rem;
+            margin-bottom: 5%;
+            font-size: 0.8rem;
+        }
+      }
