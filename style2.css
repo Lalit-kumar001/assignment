@@ -10,7 +10,7 @@ overflow: hidden;
     background-color: white;
     }
     .yellow{
-        background-color: yellow;
+        background-color: grey;
         height: 12vh;
         width: 100%;
         display: flex;
