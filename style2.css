@@ -4,13 +4,13 @@ overflow: hidden;
 
 .container{
     width: 100vw;
-    height: 90vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     background-color: white;
     }
     .yellow{
-        background-color: grey;
+        background-color: red;
         height: 12vh;
         width: 100%;
         display: flex;
@@ -159,4 +159,16 @@ overflow: hidden;
             margin-bottom: 5%;
             font-size: 0.8rem;
         }
+        .know-more{
+            text-align: center;
+            margin-top: 7%; 
+        }
+         a{
+            font-size: 0.7rem;
+        }
+        .container{
+            height: 90vh;
+        }
+
+
       }
