@@ -131,8 +131,27 @@ if (isrightswipe=='left'){
     pos4.classList.add('current');
   }
 }
-else{
-    //todo
+else if(isrightswipe=='right'){
+    if(pos4.classList.contains('current')){
+        pos4.classList.remove('current');
+        pos4.classList.add('right');
+        pos3.classList.remove('right');
+        pos3.classList.add('current');
+    }
+   else if(pos3.classList.contains('current')){
+        pos3.classList.remove('current');
+        pos3.classList.add('right');
+        pos2.classList.remove('right');
+        pos2.classList.add('current');
+    }
+
+    else if(pos2.classList.contains('current')){
+        pos2.classList.remove('current');
+        pos2.classList.add('right');
+        pos1.classList.remove('right');
+        pos1.classList.add('current');
+    }
+
 }
 }
 
