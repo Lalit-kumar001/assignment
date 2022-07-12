@@ -106,18 +106,41 @@ var touchsurface = document.getElementById('touchsurface'),
 startX,
 startY,
 dist,
-threshold = 150, //required min distance traveled to be considered swipe
+threshold = 200, //required min distance traveled to be considered swipe
 allowedTime = 200, // maximum time allowed to travel that distance
 elapsedTime,
 startTime
 
 function handleswipe(isrightswipe){
 if (isrightswipe)
-    touchsurface.innerHTML = 'Congrats, you\'ve made a <span style="color:red">right swipe!</span>'
+  if(pos1.classList.contains('current')){
+    pos1.classList.remove('current');
+    pos1.classList.add('right');
+    pos2.classList.add('current');
+  }
+  else if(pos2.classList.contains('current')){
+    pos2.classList.remove('current');
+    pos2.classList.add('right');
+    pos3.classList.add('current');
+  }
 
-else{
-    touchsurface.innerHTML = 'Condition for right swipe not met yet'
-}
+ else  if(pos3.classList.contains('current')){
+    pos3.classList.remove('current');
+    pos3.classList.add('right');
+    pos4.classList.add('current');
+  }
+
+//   else if(pos1.classList.contains('current')){
+//     pos1.classList.remove('current');
+//     pos1.classList.add('right');
+//     pos2.classList.add('current');
+//   }
+
+
+
+// else{
+//     touchsurface.innerHTML = 'Condition for right swipe not met yet'
+// }
 }
 
 touchsurface.addEventListener('touchstart', function(e){
@@ -139,7 +162,7 @@ var touchobj = e.changedTouches[0]
 dist = touchobj.pageX - startX // get total dist traveled by finger while in contact with surface
 elapsedTime = new Date().getTime() - startTime // get time elapsed
 // check that elapsed time is within specified, horizontal dist traveled >= threshold, and vertical dist traveled <= 100
-var swiperightBol = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.pageY - startY) <= 100)
+var swiperightBol = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.pageY - startY) <= 150)
 handleswipe(swiperightBol)
 e.preventDefault()
 }, false)
