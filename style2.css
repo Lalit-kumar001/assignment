@@ -11,7 +11,7 @@ overflow: hidden;
     }
     .yellow{
         background-color: yellow;
-        height: 10vh;
+        height: 12vh;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -75,14 +75,7 @@ overflow: hidden;
         margin-right: 5px;
         background-color: grey
     }
-    .zero{
-        left: 0%;
-  display: block;
-    }
-    .hn{
-        left: 110%;
-        display: none;
-    }
+    
 
 
     .div{
