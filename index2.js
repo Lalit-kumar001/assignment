@@ -144,7 +144,6 @@ if (isrightswipe)
 }
 
 touchsurface.addEventListener('touchstart', function(e){
-touchsurface.innerHTML = ''
 var touchobj = e.changedTouches[0]
 dist = 0
 startX = touchobj.pageX
