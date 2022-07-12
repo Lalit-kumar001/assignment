@@ -117,17 +117,20 @@ if (isrightswipe=='left'){
   if(pos1.classList.contains('current')){
     pos1.classList.remove('current');
     pos1.classList.add('right');
+    pos2.classList.remove('right');
     pos2.classList.add('current');
   }
   else if(pos2.classList.contains('current')){
     pos2.classList.remove('current');
     pos2.classList.add('right');
+    pos3.classList.remove('right');
     pos3.classList.add('current');
   }
 
  else  if(pos3.classList.contains('current')){
     pos3.classList.remove('current');
     pos3.classList.add('right');
+    pos4.classList.remove('right');
     pos4.classList.add('current');
   }
 }
@@ -176,10 +179,10 @@ elapsedTime = new Date().getTime() - startTime // get time elapsed
 // check that elapsed time is within specified, horizontal dist traveled >= threshold, and vertical dist traveled <= 100
 if (elapsedTime <= allowedTime){ // first condition for awipe met
     if (Math.abs(distX) >= threshold){ // 2nd condition for horizontal swipe met
-        swiperightBol = (distX < 0)? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
+       var swiper = (distX < 0)? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
     }
 }
-handleswipe(swiperleftBol)
+handleswipe(swiper)
 e.preventDefault()
 }, false)
 
