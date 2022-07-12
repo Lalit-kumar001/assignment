@@ -106,7 +106,8 @@ var touchsurface = document.getElementById('touchsurface'),
 startX,
 startY,
 dist,
-threshold = 200, //required min distance traveled to be considered swipe
+thresholdRight = 200, //required min distance traveled to be considered swipe
+thresholdleft=-200,
 allowedTime = 400, // maximum time allowed to travel that distance
 elapsedTime,
 startTime
@@ -144,6 +145,7 @@ if (isrightswipe)
 }
 
 touchsurface.addEventListener('touchstart', function(e){
+// touchsurface.innerHTML = ''
 var touchobj = e.changedTouches[0]
 dist = 0
 startX = touchobj.pageX
@@ -161,8 +163,9 @@ var touchobj = e.changedTouches[0]
 dist = touchobj.pageX - startX // get total dist traveled by finger while in contact with surface
 elapsedTime = new Date().getTime() - startTime // get time elapsed
 // check that elapsed time is within specified, horizontal dist traveled >= threshold, and vertical dist traveled <= 100
-var swiperightBol = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.pageY - startY) <= 150)
-handleswipe(swiperightBol)
+var swiperightBol = (elapsedTime <= allowedTime && dist >= thresholdRight && Math.abs(touchobj.pageY - startY) <= 150)
+var swiperleftBol = (elapsedTime <= allowedTime && dist >= thresholdleft && Math.abs(touchobj.pageY - startY) <= 150)
+handleswipe(swiperleftBol)
 e.preventDefault()
 }, false)
 
